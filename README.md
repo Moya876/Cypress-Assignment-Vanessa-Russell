@@ -27,7 +27,9 @@ $ cd cypress-ui-automation-bootcamp $
 npm install 
 
 Folder Structure 
+
 cypress/e2e/page: Page object files which include element selectors and functions that are used in tests.
+
 cypress/e2e/test: Test files which include the actual tests.
 
 Execute tests Execute the Cypress GUI
