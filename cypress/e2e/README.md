@@ -2,18 +2,18 @@ This automation suite is for the SauceDemo website:
 
 ** It was executed with the cypress automation tool
 
-The automated test cases are as follows:
+The automated test scripts are as follows:
 
-1. Data - Driven login- this test case can be found in the 'Page Objects' folder with the title 'login'
+1. Data - Driven login- this test script can be found in the 'Page Objects' folder with the title 'login'
 
 2. The checkout workflow
-   ** Single item checkout & ** Multiple items checkout - This test case can be found in the 'Page Objects' folder with the title 'Checkout'
+   ** Single item checkout & ** Multiple items checkout - This test script can be found in the 'Page Objects' folder with the title 'Checkout'
 
-3. Sort - this test case can be found in the 'Sort' folder with the title 'sortTest'
+3. Sort - this test script can be found in the 'Sort' folder with the title 'sortTest'
 
-4. Remove item - this test case can be found in the 'Remove' folder with the title 'removeFromCart'
+4. Remove item - this test script can be found in the 'Remove' folder with the title 'removeFromCart'
 
-5. Negative tests - this test case can be found in the 'Negative' folder negative with the title 'negativeTest'
+5. Negative tests - this test script can be found in the 'Negative' folder negative with the title 'negativeTest'
 
 Dependencies
 NodeJS v12, v14 or above
