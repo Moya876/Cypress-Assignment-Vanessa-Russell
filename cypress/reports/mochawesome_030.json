@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-11-29T15:25:13.503Z",
+    "end": "2022-11-29T15:25:17.168Z",
+    "duration": 3665,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9eb9bd68-a161-49a1-a97d-9e66c4c06bc2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\3-activity\\activity4.cy.js",
+      "file": "cypress\\e2e\\3-activity\\activity4.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "79b50e8f-0997-463b-a662-aab5d89133a0",
+          "title": "Activity 4",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with a valid user",
+              "fullTitle": "Activity 4 Login with a valid user",
+              "timedOut": null,
+              "duration": 1440,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Enter username & password then click the login button\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Assert that the user is taken to the Products page\ncy.get('.inventory_item_name').should('be.visible');\ncy.get('.title').contains('Products');\ncy.url().should('contain', 'inventory');",
+              "err": {},
+              "uuid": "050a27dd-ca7a-46cb-87a9-896d5e5dc60b",
+              "parentUUID": "79b50e8f-0997-463b-a662-aab5d89133a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add a single product to cart",
+              "fullTitle": "Activity 4 Add a single product to cart",
+              "timedOut": null,
+              "duration": 1455,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Click add to cart button\ncy.get('#add-to-cart-sauce-labs-backpack').click(); // Assert the notification on the cart icon then navigate to cart\ncy.get('.shopping_cart_badge').should('have.text', 1);\ncy.get('.shopping_cart_link').click(); // Assert correct item was added to cart successfully\ncy.get('.cart_quantity').should('have.text', 1);\ncy.get('#remove-sauce-labs-backpack').should('be.visible');\ncy.get('.inventory_item_name').should('have.text', 'Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "51dc8ba1-285a-4fa5-9ba7-2d84fd59295c",
+              "parentUUID": "79b50e8f-0997-463b-a662-aab5d89133a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove one item from cart",
+              "fullTitle": "Activity 4 Remove one item from cart",
+              "timedOut": null,
+              "duration": 728,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Add an item to the cart so we can remove it\ncy.get('#add-to-cart-sauce-labs-backpack').click(); // Navigate to the cart\ncy.get('.shopping_cart_link').click(); // Assert that there is 1 item in the cart then remove the item\ncy.get('.cart_quantity').should('have.text', 1);\ncy.get('.inventory_item_name').should('have.text', 'Sauce Labs Backpack');\ncy.get('#remove-sauce-labs-backpack').click(); // Assert that the item was removed and the cart is empty\ncy.get('.inventory_item_name').should('not.exist');\ncy.get('.removed_cart_item').should('exist');",
+              "err": {
+                "message": "TypeError: Cannot set property message of  which has only a getter\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Activity 4`",
+                "estack": "TypeError: Cannot set property message of  which has only a getter\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Activity 4`\n    at modifyErrMsg (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:161163:15)\n    at Object.appendErrMsg (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:161169:10)\n    at Runner.<anonymous> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:164873:76)\n    at Runner.emit (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:20883:7)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.fail (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:108412:8)\n    at Runner.fail (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:163046:25)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.failHook (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:108450:8)\n    at Hook.<anonymous> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:108524:14)\n    at next (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165309:24)\n    at https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165338:13\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9444:18)\n    at Promise._fulfill (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9388:18)\n    at Promise._resolveCallback (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9182:57)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9274:17)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9444:18)\n    at Promise._fulfill (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9388:18)",
+                "diff": null
+              },
+              "uuid": "18ad861a-148e-4d13-ba64-ce61ce95bd5f",
+              "parentUUID": "79b50e8f-0997-463b-a662-aab5d89133a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "050a27dd-ca7a-46cb-87a9-896d5e5dc60b",
+            "51dc8ba1-285a-4fa5-9ba7-2d84fd59295c"
+          ],
+          "failures": [
+            "18ad861a-148e-4d13-ba64-ce61ce95bd5f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3623,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-03T00:52:31.301Z",
+    "end": "2022-12-03T00:52:33.996Z",
+    "duration": 2695,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "62b6e230-ab66-4a53-84f2-ed865beba4c0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\Checkout\\singleproduct.cy.js",
+      "file": "cypress\\e2e\\test\\Checkout\\singleproduct.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "81f2c72c-d0a3-4490-b74c-ea737f3ea131",
+          "title": "Single product checkout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should login & add a single product to cart and check out",
+              "fullTitle": "Single product checkout Should login & add a single product to cart and check out",
+              "timedOut": null,
+              "duration": 2670,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Add the saucelabs backpack to the cart\ncy.get('#add-to-cart-sauce-labs-backpack').click(); //continue to checkout item\ncy.get('.shopping_cart_link').click();\ncy.get('#checkout').click();\ncy.get('#first-name').type('Vanessa');\ncy.get('#last-name').type('Russell');\ncy.get('#postal-code').type('00000');\ncy.get('#continue').click();\ncy.get('#finish').click();",
+              "err": {},
+              "uuid": "d1d0dc46-5f71-48c9-a815-59a6f384daaf",
+              "parentUUID": "81f2c72c-d0a3-4490-b74c-ea737f3ea131",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d1d0dc46-5f71-48c9-a815-59a6f384daaf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2670,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-01T14:54:01.585Z",
+    "end": "2022-12-01T14:54:04.469Z",
+    "duration": 2884,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4f96b6aa-ad99-4d39-a97e-4a94d870bac2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\Negative tests\\unhappyPath.cy.js",
+      "file": "cypress\\e2e\\test\\Negative tests\\unhappyPath.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5258a5b8-39b9-49dc-ab42-1028dcc96b4f",
+          "title": "Authentication Error",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Locked out user cannot login",
+              "fullTitle": "Authentication Error Locked out user cannot login",
+              "timedOut": null,
+              "duration": 1594,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('locked_out_user', 'secret_sauce');\ncy.get('.error-message-container.error').should('be.visible');\ncy.TestCommand();",
+              "err": {},
+              "uuid": "c284e327-a78e-4c32-846a-7202c612e042",
+              "parentUUID": "5258a5b8-39b9-49dc-ab42-1028dcc96b4f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Valid user should not login with invalid passsword",
+              "fullTitle": "Authentication Error Valid user should not login with invalid passsword",
+              "timedOut": null,
+              "duration": 1203,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'wrongpassword');\ncy.get('.error-message-container.error').should('be.visible');\ncy.TestCommand();",
+              "err": {},
+              "uuid": "325675e5-009d-420f-91d6-3b5b4283aa65",
+              "parentUUID": "5258a5b8-39b9-49dc-ab42-1028dcc96b4f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c284e327-a78e-4c32-846a-7202c612e042",
+            "325675e5-009d-420f-91d6-3b5b4283aa65"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2797,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

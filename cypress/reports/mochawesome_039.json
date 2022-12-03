@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-11-30T15:43:05.728Z",
+    "end": "2022-11-30T15:43:06.697Z",
+    "duration": 969,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "72193b38-5c50-409a-bb11-af6a4f615761",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\sort.cy.js",
+      "file": "cypress\\e2e\\test\\sort.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "17446608-1dd3-4b1e-ada7-0481933449e8",
+          "title": "Sort",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should sort product list from A-Z",
+              "fullTitle": "Sort should sort product list from A-Z",
+              "timedOut": null,
+              "duration": 851,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('az');\nvar productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'];\nproductList.sort();\ncy.get('.inventory_item_name').each(($elem, index) => {\n  expect($elem.text()).equal(productList[index]);\n});",
+              "err": {
+                "message": "TypeError: Cannot set property message of  which has only a getter\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Sort`",
+                "estack": "TypeError: Cannot set property message of  which has only a getter\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Sort`\n    at modifyErrMsg (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:161163:15)\n    at Object.appendErrMsg (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:161169:10)\n    at Runner.<anonymous> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:164873:76)\n    at Runner.emit (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:20883:7)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.fail (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:108412:8)\n    at Runner.fail (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:163046:25)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.failHook (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:108450:8)\n    at Hook.<anonymous> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:108524:14)\n    at next (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165309:24)\n    at https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165338:13\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9444:18)\n    at Promise._fulfill (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9388:18)\n    at Promise._resolveCallback (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9182:57)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9274:17)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9444:18)\n    at Promise._fulfill (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9388:18)",
+                "diff": null
+              },
+              "uuid": "589b64a7-5c42-4019-81ff-a51816fb4416",
+              "parentUUID": "17446608-1dd3-4b1e-ada7-0481933449e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product list from Z-A",
+              "fullTitle": "Sort should sort product list from Z-A",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('za');\nvar productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'];\nproductList.sort().reverse();\ncy.get('.inventory_item_name').each(($elem, index) => {\n  expect($elem.text()).equal(productList[index]);\n});",
+              "err": {},
+              "uuid": "bd60ce5b-9f8b-49d5-9f8d-90884e0e569f",
+              "parentUUID": "17446608-1dd3-4b1e-ada7-0481933449e8",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should sort product list from low to high",
+              "fullTitle": "Sort should sort product list from low to high",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\nProduct.selectSort(ProductData.sort['Low to High']); // Sort data list based on price, from low to high\nProductData.products.sort((a, b) => a.price - b.price);\ncy.get(Product.itemsPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${ProductData.products[index].price}`);\n});",
+              "err": {},
+              "uuid": "2022f56b-0019-4c93-aca4-85ee2db4c669",
+              "parentUUID": "17446608-1dd3-4b1e-ada7-0481933449e8",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should sort product list from high to low",
+              "fullTitle": "Sort should sort product list from high to low",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\nProduct.selectSort(ProductData.sort['High to Low']); // Sort data list based on price, from high to low\nProductData.products.sort((a, b) => b.price - a.price); // Print the prices from the sorted list\n// ProductData.products.forEach(($elem, index)=>{\n//     cy.log($elem.price)\n// })\ncy.get(Product.itemsPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${ProductData.products[index].price}`);\n});",
+              "err": {},
+              "uuid": "083f51bb-1725-4ead-81d8-00452bf52b3d",
+              "parentUUID": "17446608-1dd3-4b1e-ada7-0481933449e8",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "589b64a7-5c42-4019-81ff-a51816fb4416"
+          ],
+          "pending": [],
+          "skipped": [
+            "bd60ce5b-9f8b-49d5-9f8d-90884e0e569f",
+            "2022f56b-0019-4c93-aca4-85ee2db4c669",
+            "083f51bb-1725-4ead-81d8-00452bf52b3d"
+          ],
+          "duration": 851,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

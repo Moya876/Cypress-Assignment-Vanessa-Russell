@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-03T00:53:07.352Z",
+    "end": "2022-12-03T00:53:10.813Z",
+    "duration": 3461,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ebba8c69-5327-493a-90db-8cbfd6ddb179",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\PageObjects\\cartSingle.cy.js",
+      "file": "cypress\\e2e\\test\\PageObjects\\cartSingle.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4ff3a13f-64c8-4645-877d-121c6a03f870",
+          "title": "Multiply Product Checkout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add multiple products to cart & proceed to checkout",
+              "fullTitle": "Multiply Product Checkout Add multiple products to cart & proceed to checkout",
+              "timedOut": null,
+              "duration": 3331,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\n_cart.default.addToCart('Sauce Labs Backpack');\n_cart.default.addToCart('Sauce Labs Bike Light');\n_cart.default.addToCart('Sauce Labs Bolt T-Shirt'); //Cart.addToCart()\n\n_cart.default.navigateToCart();\ncy.get(_cart.default.cartNotification).should('have.text', 3);\ncy.get(_cart.default.cartQuantity).should('have.text', 111);\ncy.get(_cart.default.removeSauceLabBackPackBtn).should('be.visible');\ncy.get(_cart.default.cartItemsName).should('have.text', 'Sauce Labs BackpackSauce Labs Bike LightSauce Labs Bolt T-Shirt'); //continue to checkout\ncy.get(_cart.default.checkOutBtn).click();\n_checkout.default.addInfo('Vanessa', 'Russell', '00000');",
+              "err": {},
+              "uuid": "e9cdeb05-07fd-41c1-bb6e-5c15aaec86f9",
+              "parentUUID": "4ff3a13f-64c8-4645-877d-121c6a03f870",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e9cdeb05-07fd-41c1-bb6e-5c15aaec86f9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3331,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

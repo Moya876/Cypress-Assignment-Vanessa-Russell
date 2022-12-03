@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-01T04:52:36.700Z",
+    "end": "2022-12-01T04:52:43.825Z",
+    "duration": 7125,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f872faa2-42e9-4f03-ba4d-dd8de482c087",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\sort\\sort.cy.js",
+      "file": "cypress\\e2e\\test\\sort\\sort.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f03acbf6-eb34-4981-9a10-610c6e45747f",
+          "title": "Sort",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should sort product list from A-Z",
+              "fullTitle": "Sort should sort product list from A-Z",
+              "timedOut": null,
+              "duration": 1995,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('az');\nvar productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'];\nproductList.sort();\ncy.get('.inventory_item_name').each(($elem, index) => {\n  expect($elem.text()).equal(productList[index]);\n});",
+              "err": {},
+              "uuid": "b3f4a863-9075-4144-8a61-1ea1323ee1b2",
+              "parentUUID": "f03acbf6-eb34-4981-9a10-610c6e45747f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product list from Z-A",
+              "fullTitle": "Sort should sort product list from Z-A",
+              "timedOut": null,
+              "duration": 1527,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('za');\nvar productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'];\nproductList.sort().reverse();\ncy.get('.inventory_item_name').each(($elem, index) => {\n  expect($elem.text()).equal(productList[index]);\n});",
+              "err": {},
+              "uuid": "578d86fb-fc17-4354-9854-2d57e13d3e90",
+              "parentUUID": "f03acbf6-eb34-4981-9a10-610c6e45747f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product list from low to high",
+              "fullTitle": "Sort should sort product list from low to high",
+              "timedOut": null,
+              "duration": 1616,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\n_product.default.selectSort(_products.default.sort['Low to High']); // Sort data list based on price, from low to high\n\n_products.default.products.sort((a, b) => a.price - b.price);\ncy.get(_product.default.itemsPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${_products.default.products[index].price}`);\n});",
+              "err": {},
+              "uuid": "f19b04f3-8474-488c-909f-cd91056abe98",
+              "parentUUID": "f03acbf6-eb34-4981-9a10-610c6e45747f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product list from high to low",
+              "fullTitle": "Sort should sort product list from high to low",
+              "timedOut": null,
+              "duration": 1720,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\n_product.default.selectSort(_products.default.sort['High to Low']); // Sort data list based on price, from high to low\n\n_products.default.products.sort((a, b) => b.price - a.price); // Print the prices from the sorted list\n// ProductData.products.forEach(($elem, index)=>{\n//     cy.log($elem.price)\n// })\n\ncy.get(_product.default.itemsPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${_products.default.products[index].price}`);\n});",
+              "err": {},
+              "uuid": "79cef45f-224e-4988-b7b8-1d0deeb71bef",
+              "parentUUID": "f03acbf6-eb34-4981-9a10-610c6e45747f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b3f4a863-9075-4144-8a61-1ea1323ee1b2",
+            "578d86fb-fc17-4354-9854-2d57e13d3e90",
+            "f19b04f3-8474-488c-909f-cd91056abe98",
+            "79cef45f-224e-4988-b7b8-1d0deeb71bef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6858,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

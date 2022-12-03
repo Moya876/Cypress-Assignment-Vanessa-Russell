@@ -1,0 +1,171 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 2,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-11-30T16:48:12.426Z",
+    "end": "2022-11-30T16:48:18.135Z",
+    "duration": 5709,
+    "testsRegistered": 4,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d6c6ce71-14e0-45a7-8456-fdcc304e1447",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\sort.cy.js",
+      "file": "cypress\\e2e\\test\\sort.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "41286f10-3809-4483-bdb4-77d21500e9c8",
+          "title": "Sort",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should sort product list from A-Z",
+              "fullTitle": "Sort should sort product list from A-Z",
+              "timedOut": null,
+              "duration": 2065,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('az');\nvar productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'];\nproductList.sort();\ncy.get('.inventory_item_name').each(($elem, index) => {\n  expect($elem.text()).equal(productList[index]);\n});",
+              "err": {},
+              "uuid": "005d5e44-b318-47d5-828c-d9870d89638a",
+              "parentUUID": "41286f10-3809-4483-bdb4-77d21500e9c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product list from Z-A",
+              "fullTitle": "Sort should sort product list from Z-A",
+              "timedOut": null,
+              "duration": 1563,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('za');\nvar productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'];\nproductList.sort().reverse();\ncy.get('.inventory_item_name').each(($elem, index) => {\n  expect($elem.text()).equal(productList[index]);\n});",
+              "err": {},
+              "uuid": "aaf4b6bc-0ae5-4f32-9348-1f1f41e477ca",
+              "parentUUID": "41286f10-3809-4483-bdb4-77d21500e9c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product list from low to high",
+              "fullTitle": "Sort should sort product list from low to high",
+              "timedOut": null,
+              "duration": 799,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\nProduct.selectSort(ProductData.sort['Low to High']); // Sort data list based on price, from low to high\nProductData.products.sort((a, b) => a.price - b.price);\ncy.get(Product.itemsPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${ProductData.products[index].price}`);\n});",
+              "err": {
+                "message": "ReferenceError: Product is not defined",
+                "estack": "ReferenceError: Product is not defined\n    at Context.eval (webpack:///./cypress/e2e/test/sort.cy.js:35:8)",
+                "diff": null
+              },
+              "uuid": "8c00986f-d6b9-4643-bfa9-2dc27d935dc7",
+              "parentUUID": "41286f10-3809-4483-bdb4-77d21500e9c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product list from high to low",
+              "fullTitle": "Sort should sort product list from high to low",
+              "timedOut": null,
+              "duration": 897,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\nProduct.selectSort(ProductData.sort['High to Low']); // Sort data list based on price, from high to low\nProductData.products.sort((a, b) => b.price - a.price); // Print the prices from the sorted list\n// ProductData.products.forEach(($elem, index)=>{\n//     cy.log($elem.price)\n// })\ncy.get(Product.itemsPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${ProductData.products[index].price}`);\n});",
+              "err": {
+                "message": "ReferenceError: Product is not defined",
+                "estack": "ReferenceError: Product is not defined\n    at Context.eval (webpack:///./cypress/e2e/test/sort.cy.js:47:8)",
+                "diff": null
+              },
+              "uuid": "289e4223-0f0e-4595-8d7a-44c2630cf67a",
+              "parentUUID": "41286f10-3809-4483-bdb4-77d21500e9c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "005d5e44-b318-47d5-828c-d9870d89638a",
+            "aaf4b6bc-0ae5-4f32-9348-1f1f41e477ca"
+          ],
+          "failures": [
+            "8c00986f-d6b9-4643-bfa9-2dc27d935dc7",
+            "289e4223-0f0e-4595-8d7a-44c2630cf67a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5324,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
